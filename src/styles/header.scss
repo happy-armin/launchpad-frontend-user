@@ -1,0 +1,158 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #191E1E;
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 60px;
+        margin-left: 10px;
+        text-decoration: none;
+        color: #FFFFFF;
+        font-family: Clash Grotesk;
+        font-size: 24px;
+        text-align: center;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__nav {
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                display: inline;
+                margin-inline: 15px;
+
+                a {
+                    font-size: 18px;
+                    text-decoration: none;
+                    color: #A6A6A6;
+                    font-family: Clash Grotesk;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .hamburger-menu {
+        display: none;
+        cursor: pointer;
+        @media (max-width: 768px) {
+            display: block;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 20px;
+            height: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger {
+            position: relative;
+            width: 20px;
+            height: 20px;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 2px; // Height of each line
+                background-color: #FFFFFF; // Color of the lines
+                transition: all 0.3s ease;
+            }
+
+            &::before {
+                top: 0; // Position the first line at the top
+                transform: translateY(2px);
+            }
+
+            &::after {
+                bottom: 0; // Position the last line at the bottom
+                transform: translateY(-2px);
+            }
+
+            &.open {
+                &::before {
+                transform: rotate(45deg) translate(6px, 6px); // Rotate to form an "X"
+                }
+
+                &::after {
+                transform: rotate(-45deg) translate(6px, -6px); // Rotate to form an "X"
+                }
+                .line {
+                    display: none;
+                }
+            }
+
+            .line {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #FFFFFF;
+                width: 100%;
+                height: 2px;
+                transition: all 0.3s ease;
+            }
+        }
+
+        .menu {
+            position: fixed;
+            left: 0;
+            top: 60px;
+            width: 100%;
+            background-color: #191E1E;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease;
+            padding-block: 10px;
+            gap: 15px;
+
+            &.fade-in {
+                opacity: 1; // Fully visible
+                visibility: visible; // Make it visible
+            }
+
+            &.fade-out {
+                opacity: 0; // Fully transparent
+                visibility: hidden; // Hide it
+            }
+
+            .menu-item {
+                font-size: 18px;
+                text-decoration: none;
+                color: #A6A6A6;
+                font-family: Clash Grotesk;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}
