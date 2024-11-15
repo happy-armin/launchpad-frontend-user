@@ -1,0 +1,31 @@
+.button {
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+
+  &.primary {
+    padding: 12px 20px;
+      background-color: #191E1E;
+      color: #FECB5B;
+
+    &:hover {
+      background-color: #1C2323;
+      color: #FECB5B;
+      box-shadow: 2px 3px 3px rgba(254, 203, 91, 0.3);
+    }
+  }
+
+  &.secondary {
+    padding: 10px 15px;
+      background-color: #191E1E;
+      color: #FE5B5B;
+
+    &:hover {
+      background-color: #1C2323;
+      color: #FE5B5B;
+      box-shadow: 2px 3px 3px rgba(254, 103, 91, 0.3);
+    }
+  }
+}

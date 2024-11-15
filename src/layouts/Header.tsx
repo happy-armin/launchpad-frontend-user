@@ -1,22 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import HamburgerMenu from './HamburgerMenu';
+import HamburgerMenu from '../components/HamburgerMenu';
 
-import '../styles/header.scss';
+import '../styles/layouts/header.scss';
 
 export default function Header() {
   return (
     <header className="header">
-      <a href="#" className="header__logo">
+      <Link to="/" className="header__logo">
         LaunchPad
-      </a>
+      </Link>
       <nav className="header__nav">
         <ul>
           <li>
-            <a href="#">Create Pool</a>
+            <Link to="/create">Create Pool</Link>
           </li>
           <li>
-            <a href="#">Block List</a>
+            <Link to="/block">Block List</Link>
           </li>
         </ul>
       </nav>

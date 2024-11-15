@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,12 +14,12 @@ export default function HamburgerMenu() {
         <div className="line"></div>
       </div>
       <nav className={`menu ${isOpen ? 'fade-in' : 'fade-out'}`}>
-        <a href="#" className="menu-item">
+        <Link to="/create" className="menu-item">
           Create Pool
-        </a>
-        <a href="#" className="menu-item">
+        </Link>
+        <Link to="/block" className="menu-item">
           Block List
-        </a>
+        </Link>
       </nav>
     </div>
   );

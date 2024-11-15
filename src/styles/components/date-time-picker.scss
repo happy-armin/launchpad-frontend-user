@@ -1,0 +1,28 @@
+.date-time-picker {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+
+  .picker-input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: #007bff;
+    }
+
+    &:disabled {
+      background: #f8f9fa;
+      color: #adb5bd;
+      cursor: not-allowed;
+    }
+  }
+
+  &.disabled {
+    opacity: 0.6;
+  }
+}

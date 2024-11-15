@@ -1,0 +1,105 @@
+.create-pool {
+    margin-block: 20px;
+    max-width: 800px;
+    margin-inline: auto;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 15px;
+        height: 60px;
+
+        .header-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: rgba(254, 203, 91, 1);
+            &::after {
+                content: '';
+                display: block;
+                position: relative;
+                top: 3px;
+                left: 4px;
+                width: 120px;
+                height: 2px;
+                background-color: rgb(254, 203, 91);
+                border-radius: 2px;
+            }
+        }
+    }
+
+    &__content {
+        padding-inline: 10px;
+
+        .content-section {
+            margin-top: 40px;
+
+            &__title {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 15px;
+                padding-inline: 10px;
+                color :rgb(254, 203, 91);
+            }
+
+            &__options {
+                display: block;
+                padding-inline: 30px;
+
+                .option {
+                    display : flex;
+                    justify-content: start;
+                    align-items: center;
+                    margin-block: 20px;
+                    
+                    .avatar {
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                        background-color: #191E1E;
+                        margin-right: 30px;
+                        overflow: hidden;
+                        cursor: pointer;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    label {
+                        font-size: 16px;
+                        min-width: 150px;
+                        color: white;
+                    }
+                    input {
+                        cursor: pointer;
+                        width: 360px;
+                        height: 40px;
+                        border: none;
+                        background-color: #191E1E;
+                        outline: none;
+                        padding-inline: 10px;
+                        color: white;
+                        border-radius: 5px;
+
+                        &::-webkit-inner-spin-button,
+                        &::-webkit-outer-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+
+                        & {
+                            -moz-appearance: textfield; /* For Firefox */
+                            appearance: none; /* Standard */
+                        }
+
+                        &:focus {
+                            background-color: #1E2323;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

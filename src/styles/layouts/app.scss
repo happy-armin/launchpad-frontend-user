@@ -1,0 +1,27 @@
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+}
+
+.main {
+    flex-grow: 1;
+    padding-inline: 30px;
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+
+.container {
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+
+    @media (min-width: 840px) {
+        width: 780px;
+    }
+    @media (min-width: 1200px) {
+        width: 1140px;
+    }
+    @media (min-width: 1440px) {
+        width: 1380px;
+    }
+}
