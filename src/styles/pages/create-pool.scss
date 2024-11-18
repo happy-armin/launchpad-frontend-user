@@ -82,6 +82,9 @@
                         padding-inline: 10px;
                         color: white;
                         border-radius: 5px;
+                        &.fit-width {
+                            min-width: 540px;
+                        }
 
                         &::-webkit-inner-spin-button,
                         &::-webkit-outer-spin-button {

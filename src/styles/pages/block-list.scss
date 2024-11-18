@@ -24,6 +24,37 @@
                 border-radius: 2px;
             }
         }
+
+        input {
+            cursor: pointer;
+            width: 360px;
+            height: 40px;
+            border: none;
+            background-color: #191E1E;
+            outline: none;
+            padding-inline: 10px;
+            color: white;
+            border-radius: 5px;
+            margin-inline: 10px;
+            &.fit-width {
+                min-width: 540px;
+            }
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            & {
+                -moz-appearance: textfield; /* For Firefox */
+                appearance: none; /* Standard */
+            }
+
+            &:focus {
+                background-color: #1E2323;
+            }
+        }
     }
 
     &__content {
@@ -66,4 +97,20 @@
             }
         }
     }
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.loading, .error {
+    font-size: 24px;
+}
+.loading {
+    color: white;
+}
+.error {
+    color: #ff8080;
 }
