@@ -1,0 +1,173 @@
+.card {
+    width: 320px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 10px;
+    padding-inline: 10px;
+    border-radius: 10px;
+    background-color: #191E1E;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 4px 4px 4px #000000;
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        .avatar {
+            padding-inline: 15px;
+            padding-block: 15px;
+            img {
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+        .head-info {
+            margin-left: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            gap: 5px;
+
+            .token-name {
+                margin-block: 0;
+                font-size: 24px;
+                font-weight: 700;
+                color: white;
+            }
+            .token-symbol {
+                font-size: 16px;
+                font-weight: 500;
+                color: #4F5B62;
+            }
+            .pool-state {
+                margin-top: 3px;
+                padding-inline: 10px;
+                padding-block: 1px;
+                border-radius: 10px;
+                font-size: 11px;
+                font-weight: 500;
+                background-color: #A9B3B730;
+                color: #A9B3B7;
+
+                &.Upcoming { /* fixed */
+                    background-color: #8080FF30;
+                    color: #8080FFC0;
+                }
+                &.Live { /* fixed */
+                    background-color: #80FF8030;
+                    color: #80FF80C0;
+                }
+                &.Closed { /* fixed */
+                    background-color: #FF808030;
+                    color: #FF8080C0;
+                }
+                &.Claimable { /* fixed */
+                    background-color: #A9B3B730;
+                    color: #A9B3B7;
+                }
+            }
+        }
+    }
+
+    .card-description {
+        width: 100%;
+        p {
+            padding-inline: 10px;
+            margin-block: 20px;
+            font-size: 14px;
+            color: #9FABB2;
+            line-height: 1.5;
+            text-align: justify;
+        }
+    }
+
+    .card-detail {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .swap-rate {
+            display: flex;
+            flex-direction: column;
+            justify-self: space-between;
+            align-items: start;
+            padding-left: 10px;
+
+            h4 {
+                margin-block: 5px;
+                font-size: 12px;
+                font-weight: 500;
+                color: #4F5B62;
+            }
+            p {
+                margin-block: 0;
+                font-size: 14px;
+                font-weight: 500;
+                color: white;
+            }
+        }
+        .token-cap {
+            display: flex;
+            flex-direction: column;
+            justify-self: space-between;
+            align-items: end;
+            padding-right: 10px;
+
+            h4 {
+                margin-block: 5px;
+                font-size: 12px;
+                font-weight: 500;
+                color: #4F5B62;
+            }
+            p {
+                margin-block: 0;
+                font-size: 14px;
+                font-weight: 500;
+                color: white;
+            }
+        }
+    }
+
+    .card-progress {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-block: 5px;
+
+        .top-detail {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            span {
+                font-size: 12px;
+                font-weight: 500;
+                color: #A9B3B7;
+                padding-inline: 3px;
+                margin-bottom: -5px;
+            }
+        }
+        .progress {
+            width: 100%;
+            height: 6px;
+            background-color: #E0E0E0;
+            border-radius: 3px;
+            margin-top: 10px;
+        }
+    }
+}

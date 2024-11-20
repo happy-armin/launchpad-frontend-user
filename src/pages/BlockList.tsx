@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import { ethers } from 'ethers';
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from '../contracts/IDOFactory';
+import Button from '../components/Button';
+import Filter_Block from '../contracts/filter-block';
 
 import '../styles/pages/block-list.scss';
 import '../styles/layouts/app.scss';
-import Button from '../components/Button';
 
 const GET_BLOCKED_USERS = gql`
   query GetBlockedUsers {
     addedToBlocks {
+      id
+      account
+    }
+    removedFromBlocks {
       id
       account
     }
@@ -63,7 +68,7 @@ export default function BlockList() {
           {error && <p className="error">Error : {error.message}</p>}
         </div>
       )}
-      {data && (
+      {!!data && (
         <div className="block-list">
           <div className="block-list__header">
             <h2 className="header-title">Block List</h2>
@@ -80,12 +85,14 @@ export default function BlockList() {
           </div>
           <div className="block-list__content">
             <ul className="data-list">
-              {data.addedToBlocks.map((user: { id: string; account: string }, index: number) => (
-                <li key={index} className={index % 2 === 0 ? 'even' : 'odd'}>
-                  <span>{user.account}</span>
-                  <button onClick={() => handleRemoveClick(user.account)}>remove</button>
-                </li>
-              ))}
+              {Filter_Block(data.addedToBlocks, data.removedFromBlocks).map(
+                (user: { id: string; account: string }, index: number) => (
+                  <li key={index} className={index % 2 === 0 ? 'even' : 'odd'}>
+                    <span>{user.account}</span>
+                    <button onClick={() => handleRemoveClick(user.account)}>remove</button>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </div>

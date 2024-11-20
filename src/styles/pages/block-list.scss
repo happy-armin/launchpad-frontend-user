@@ -76,23 +76,38 @@
                 padding-block: 10px;
                 font-size: 16px;
                 color: #FFFFFF;
+                transition: all 0.5s ease;
                 
                 span {
                     min-width: 400px;
                 }
                 button {
+                    border: none;
+                    border-radius: 15px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: all 0.3s ease;
+                    padding: 10px 15px;
+                    background-color: #191E1E;
+                    color: #FE5B5B;
+
+                    &:hover {
+                        background-color: #1C2323;
+                        color: #FE5B5B;
+                        box-shadow: 2px 3px 3px rgba(254, 103, 91, 0.3);
+                    }
                 }
             }
             li.even {
                 background-color: #FFFFFF20;
                 &:hover {
-                    background-color: #FFFFFF50;
+                    background-color: #FFCCCC40;
                 }
             }
             li.odd {
                 background-color: #FFFFFF30;
                 &:hover {
-                    background-color: #FFFFFF50;
+                    background-color: #FFCCCC40;
                 }
             }
         }

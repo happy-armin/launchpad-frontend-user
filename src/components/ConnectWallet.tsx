@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 
+import '../styles/components/connect-wallet.scss';
+
 const ConnectWallet: React.FC = () => {
   const [account, setAccount] = useState<string | null>(null);
   const [provider, setProvider] = useState<ethers.BrowserProvider | null>(null);
@@ -21,6 +23,7 @@ const ConnectWallet: React.FC = () => {
         const address = (await signer).address;
         setAccount(address);
         setProvider(web3Provider);
+        console.log(await provider?.listAccounts());
       } catch (error) {
         console.error('Error connecting to wallet:', error);
       }
@@ -49,7 +52,15 @@ const ConnectWallet: React.FC = () => {
   }, []);
 
   return (
-    <div>{account ? <p>Connected as: {account}</p> : <button onClick={connectWallet}>Connect MetaMask</button>}</div>
+    <div>
+      {account ? (
+        <p className="connected-account">{account}</p>
+      ) : (
+        <button className="connect-button" onClick={connectWallet}>
+          Connect MetaMask
+        </button>
+      )}
+    </div>
   );
 };
 

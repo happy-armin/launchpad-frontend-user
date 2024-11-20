@@ -6,10 +6,11 @@ import '../styles/components/date-time-picker.scss'; // Custom styling
 interface DateTimePickerProps {
   onChange: (date: Date | null) => void;
   value: Date | null;
+  id: string | null;
   disabled?: boolean;
 }
 
-const DateTimePicker: React.FC<DateTimePickerProps> = ({ onChange, value, disabled }) => {
+const DateTimePicker: React.FC<DateTimePickerProps> = ({ onChange, value, id, disabled }) => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(value);
 
   const handleDateChange = (date: Date | null) => {
@@ -20,6 +21,7 @@ const DateTimePicker: React.FC<DateTimePickerProps> = ({ onChange, value, disabl
   return (
     <div className={`date-time-picker ${disabled ? 'disabled' : ''}`}>
       <DatePicker
+        id={!!id ? id : ''}
         selected={selectedDate}
         onChange={handleDateChange}
         showTimeSelect

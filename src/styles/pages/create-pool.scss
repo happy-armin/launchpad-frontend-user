@@ -83,7 +83,8 @@
                         color: white;
                         border-radius: 5px;
                         &.fit-width {
-                            min-width: 540px;
+                            min-width: 400px;
+                            margin-left: 20px;
                         }
 
                         &::-webkit-inner-spin-button,

@@ -1,0 +1,30 @@
+.connected-account {
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+    width: 400px;
+    height: 40px;
+    background-color: rgb(15, 20, 20);
+    border: rgba(254, 203, 91, 0.3) 2px solid;
+    border-radius: 20px;
+    color: rgb(254, 203, 91);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        border: rgba(254, 203, 91, 0.8) 2px solid;
+    }
+}
+
+.connect-button {
+    width: 160px;
+    height: 40px;
+    background-color: rgb(15, 20, 20);
+    border: rgb(15, 20, 20) 2px solid;
+    border-radius: 20px;
+    color: rgb(254, 203, 91);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        border: rgba(254, 203, 91, 0.5) 2px solid;
+    }
+}

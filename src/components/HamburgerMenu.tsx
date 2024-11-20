@@ -17,6 +17,9 @@ export default function HamburgerMenu() {
         <Link to="/create" className="menu-item">
           Create Pool
         </Link>
+        <Link to="/pools" className="menu-item">
+          IDOs
+        </Link>
         <Link to="/block" className="menu-item">
           Block List
         </Link>
