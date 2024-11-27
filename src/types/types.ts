@@ -23,3 +23,8 @@ export interface DEXInfo {
   router: string;
   factory: string;
 }
+
+export interface PoolProgressInfo {
+  id: string;
+  progress: number;
+}

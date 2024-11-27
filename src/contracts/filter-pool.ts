@@ -1,5 +1,7 @@
 export interface PoolItem {
   id: string;
+  holder: string;
+  address: string;
   rewardToken: string;
   price: bigint;
   buyToken: string;

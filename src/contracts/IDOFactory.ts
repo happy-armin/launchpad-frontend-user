@@ -1,58 +1,21 @@
 export const CONTRACT_ABI = [
   {
-    inputs: [
-      {
-        internalType: 'address',
-        name: 'initialOwner',
-        type: 'address',
-      },
-    ],
+    inputs: [{ internalType: 'address', name: 'initialOwner', type: 'address' }],
     stateMutability: 'nonpayable',
     type: 'constructor',
   },
+  { inputs: [{ internalType: 'address', name: 'owner', type: 'address' }], name: 'OwnableInvalidOwner', type: 'error' },
   {
-    inputs: [
-      {
-        internalType: 'address',
-        name: 'owner',
-        type: 'address',
-      },
-    ],
-    name: 'OwnableInvalidOwner',
-    type: 'error',
-  },
-  {
-    inputs: [
-      {
-        internalType: 'address',
-        name: 'account',
-        type: 'address',
-      },
-    ],
+    inputs: [{ internalType: 'address', name: 'account', type: 'address' }],
     name: 'OwnableUnauthorizedAccount',
     type: 'error',
   },
   {
     anonymous: false,
     inputs: [
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'owner',
-        type: 'address',
-      },
-      {
-        indexed: false,
-        internalType: 'address',
-        name: 'idoPool',
-        type: 'address',
-      },
-      {
-        indexed: false,
-        internalType: 'address',
-        name: 'rewardToken',
-        type: 'address',
-      },
+      { indexed: true, internalType: 'address', name: 'owner', type: 'address' },
+      { indexed: false, internalType: 'address', name: 'idoPool', type: 'address' },
+      { indexed: false, internalType: 'address', name: 'rewardToken', type: 'address' },
     ],
     name: 'IDOCreated',
     type: 'event',
@@ -60,56 +23,26 @@ export const CONTRACT_ABI = [
   {
     anonymous: false,
     inputs: [
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'previousOwner',
-        type: 'address',
-      },
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'newOwner',
-        type: 'address',
-      },
+      { indexed: true, internalType: 'address', name: 'previousOwner', type: 'address' },
+      { indexed: true, internalType: 'address', name: 'newOwner', type: 'address' },
     ],
     name: 'OwnershipTransferred',
     type: 'event',
   },
   {
     anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: 'address',
-        name: 'account',
-        type: 'address',
-      },
-    ],
+    inputs: [{ indexed: false, internalType: 'address', name: 'account', type: 'address' }],
     name: 'addedToBlock',
     type: 'event',
   },
   {
     anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: 'address',
-        name: 'account',
-        type: 'address',
-      },
-    ],
+    inputs: [{ indexed: false, internalType: 'address', name: 'account', type: 'address' }],
     name: 'removedFromBlock',
     type: 'event',
   },
   {
-    inputs: [
-      {
-        internalType: 'address',
-        name: 'account',
-        type: 'address',
-      },
-    ],
+    inputs: [{ internalType: 'address', name: 'account', type: 'address' }],
     name: 'addToBlock',
     outputs: [],
     stateMutability: 'nonpayable',
@@ -119,21 +52,9 @@ export const CONTRACT_ABI = [
     inputs: [
       {
         components: [
-          {
-            internalType: 'string',
-            name: 'feeName',
-            type: 'string',
-          },
-          {
-            internalType: 'string',
-            name: 'feeSymbol',
-            type: 'string',
-          },
-          {
-            internalType: 'uint256',
-            name: 'feeSupply',
-            type: 'uint256',
-          },
+          { internalType: 'string', name: 'feeName', type: 'string' },
+          { internalType: 'string', name: 'feeSymbol', type: 'string' },
+          { internalType: 'uint256', name: 'feeSupply', type: 'uint256' },
         ],
         internalType: 'struct IDOFactory.FeeInfo',
         name: 'feeInfo',
@@ -141,36 +62,12 @@ export const CONTRACT_ABI = [
       },
       {
         components: [
-          {
-            internalType: 'contract IERC20',
-            name: 'rewardToken',
-            type: 'address',
-          },
-          {
-            internalType: 'uint256',
-            name: 'rewardTokenPrice',
-            type: 'uint256',
-          },
-          {
-            internalType: 'contract IERC20',
-            name: 'buyToken',
-            type: 'address',
-          },
-          {
-            internalType: 'uint256',
-            name: 'buyTokenSupply',
-            type: 'uint256',
-          },
-          {
-            internalType: 'uint256',
-            name: 'softCap',
-            type: 'uint256',
-          },
-          {
-            internalType: 'uint256',
-            name: 'hardCap',
-            type: 'uint256',
-          },
+          { internalType: 'contract IERC20', name: 'rewardToken', type: 'address' },
+          { internalType: 'uint256', name: 'rewardTokenPrice', type: 'uint256' },
+          { internalType: 'contract IERC20', name: 'buyToken', type: 'address' },
+          { internalType: 'uint256', name: 'buyTokenSupply', type: 'uint256' },
+          { internalType: 'uint256', name: 'softCap', type: 'uint256' },
+          { internalType: 'uint256', name: 'hardCap', type: 'uint256' },
         ],
         internalType: 'struct IDOPool.TokenInfo',
         name: 'tokenInfo',
@@ -178,21 +75,9 @@ export const CONTRACT_ABI = [
       },
       {
         components: [
-          {
-            internalType: 'uint256',
-            name: 'startTimestamp',
-            type: 'uint256',
-          },
-          {
-            internalType: 'uint256',
-            name: 'endTimestamp',
-            type: 'uint256',
-          },
-          {
-            internalType: 'uint256',
-            name: 'claimTimestamp',
-            type: 'uint256',
-          },
+          { internalType: 'uint256', name: 'startTimestamp', type: 'uint256' },
+          { internalType: 'uint256', name: 'endTimestamp', type: 'uint256' },
+          { internalType: 'uint256', name: 'claimTimestamp', type: 'uint256' },
         ],
         internalType: 'struct IDOPool.Timestamps',
         name: 'timestamp',
@@ -200,26 +85,14 @@ export const CONTRACT_ABI = [
       },
       {
         components: [
-          {
-            internalType: 'address',
-            name: 'router',
-            type: 'address',
-          },
-          {
-            internalType: 'address',
-            name: 'factory',
-            type: 'address',
-          },
+          { internalType: 'address', name: 'router', type: 'address' },
+          { internalType: 'address', name: 'factory', type: 'address' },
         ],
         internalType: 'struct IDOPool.DEXInfo',
         name: 'dexInfo',
         type: 'tuple',
       },
-      {
-        internalType: 'string',
-        name: 'metadataUrl',
-        type: 'string',
-      },
+      { internalType: 'string', name: 'metadataUrl', type: 'string' },
     ],
     name: 'createIDO',
     outputs: [],
@@ -229,44 +102,20 @@ export const CONTRACT_ABI = [
   {
     inputs: [],
     name: 'owner',
-    outputs: [
-      {
-        internalType: 'address',
-        name: '',
-        type: 'address',
-      },
-    ],
+    outputs: [{ internalType: 'address', name: '', type: 'address' }],
     stateMutability: 'view',
     type: 'function',
   },
   {
-    inputs: [
-      {
-        internalType: 'address',
-        name: 'account',
-        type: 'address',
-      },
-    ],
+    inputs: [{ internalType: 'address', name: 'account', type: 'address' }],
     name: 'removeFromBlock',
     outputs: [],
     stateMutability: 'nonpayable',
     type: 'function',
   },
+  { inputs: [], name: 'renounceOwnership', outputs: [], stateMutability: 'nonpayable', type: 'function' },
   {
-    inputs: [],
-    name: 'renounceOwnership',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    inputs: [
-      {
-        internalType: 'address',
-        name: 'newOwner',
-        type: 'address',
-      },
-    ],
+    inputs: [{ internalType: 'address', name: 'newOwner', type: 'address' }],
     name: 'transferOwnership',
     outputs: [],
     stateMutability: 'nonpayable',
@@ -274,4 +123,4 @@ export const CONTRACT_ABI = [
   },
 ];
 
-export const CONTRACT_ADDRESS = '0x7b777442d9f345E0851a038A30872ECD097C709b';
+export const CONTRACT_ADDRESS = '0x350a1eE41518804916f3E9D58Dc55F659971F686';

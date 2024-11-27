@@ -54,10 +54,11 @@ export default function CreatePool() {
       // prepare for params
       const univ2Router = '0xa6fed877eB8845A24B361A2C3b80F3D528f91d42';
       const univ2Factory = '0xa6fed877eB8845A24B361A2C3b80F3D528f91d42';
+
       const timeStamps: TimeStamps = {
-        startTimestamp: BigInt(Math.floor((!!startDateTime ? startDateTime.getTime() : 0) / 1000) + 3600),
-        endTimestamp: BigInt(Math.floor((!!endDateTime ? endDateTime.getTime() : 0) / 1000) + 7200),
-        claimTimestamp: BigInt(Math.floor((!!claimDateTime ? claimDateTime.getTime() : 0) / 1000) + 10800),
+        startTimestamp: BigInt(Math.floor((!!startDateTime ? startDateTime.getTime() : 0) / 1000)),
+        endTimestamp: BigInt(Math.floor((!!endDateTime ? endDateTime.getTime() : 0) / 1000)),
+        claimTimestamp: BigInt(Math.floor((!!claimDateTime ? claimDateTime.getTime() : 0) / 1000)),
       };
 
       const params = [

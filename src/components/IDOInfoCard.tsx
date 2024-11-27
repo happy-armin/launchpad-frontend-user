@@ -1,8 +1,7 @@
 import React from 'react';
 import { ethers } from 'ethers';
-import { Link } from 'react-router-dom';
 
-import '../styles/components/ido-card.scss';
+import '../styles/components/ido-info-card.scss';
 interface CardProps {
   poolId: string;
   tokenName: string | undefined;
@@ -14,12 +13,12 @@ interface CardProps {
   tokenCap: bigint | undefined;
   softCap: bigint;
   hardCap: bigint;
-  progress: number | undefined;
+  progress: number;
 }
 
-export default function IDOCard(props: CardProps) {
+export default function IDOInfoCard(props: CardProps) {
   return (
-    <Link className="card" to={`/pools/${props.poolId}`}>
+    <div className="card-info-content">
       <div className="card-header">
         <div className="avatar">
           <img src={props.ipfsUrl}></img>
@@ -57,6 +56,6 @@ export default function IDOCard(props: CardProps) {
           <div className="progress-fill" style={{ width: `${props.progress ? props.progress : 0}%` }}></div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

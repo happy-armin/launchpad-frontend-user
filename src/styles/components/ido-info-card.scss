@@ -1,5 +1,5 @@
-.card {
-    width: 320px;
+.card-info-content {
+    width: 300px;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -9,11 +9,12 @@
     padding-inline: 10px;
     border-radius: 10px;
     background-color: #191E1E;
+    border: 1px solid #191E1E;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     &:hover {
-        box-shadow: 4px 4px 4px #000000;
+        border: 1px solid #FFFFFF20;
     }
 
     .card-header {

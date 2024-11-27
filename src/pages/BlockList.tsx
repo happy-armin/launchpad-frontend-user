@@ -6,7 +6,6 @@ import Button from '../components/Button';
 import Filter_Block from '../contracts/filter-block';
 
 import '../styles/pages/block-list.scss';
-import '../styles/layouts/app.scss';
 
 const GET_BLOCKED_USERS = gql`
   query GetBlockedUsers {

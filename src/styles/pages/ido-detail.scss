@@ -1,0 +1,25 @@
+.detail-container {
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    .detail-content {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        gap: 20px;
+
+        .detail-card {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .detail-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}

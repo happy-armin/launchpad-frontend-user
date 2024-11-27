@@ -25,3 +25,19 @@
         width: 1380px;
     }
 }
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.loading, .error {
+    font-size: 24px;
+}
+.loading {
+    color: white;
+}
+.error {
+    color: #ff8080;
+}

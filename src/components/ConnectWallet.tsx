@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
+import { useWallet } from './WalletProvider';
 
 import '../styles/components/connect-wallet.scss';
 
 const ConnectWallet: React.FC = () => {
   const [account, setAccount] = useState<string | null>(null);
   const [provider, setProvider] = useState<ethers.BrowserProvider | null>(null);
+
+  const { walletAddress, setWalletAddress } = useWallet();
 
   const connectWallet = async () => {
     if (window.ethereum) {
@@ -23,6 +26,7 @@ const ConnectWallet: React.FC = () => {
         const address = (await signer).address;
         setAccount(address);
         setProvider(web3Provider);
+        setWalletAddress(address);
         console.log(await provider?.listAccounts());
       } catch (error) {
         console.error('Error connecting to wallet:', error);
@@ -42,6 +46,7 @@ const ConnectWallet: React.FC = () => {
         if (accounts.length > 0 && network.chainId === BigInt(11155111)) {
           setAccount(accounts[0].address);
           setProvider(web3Provider);
+          setWalletAddress(accounts[0].address);
         } else if (network.chainId !== BigInt(11155111)) {
           alert('Please switch to the Sepolia network in MetaMask.');
         }
@@ -54,7 +59,7 @@ const ConnectWallet: React.FC = () => {
   return (
     <div>
       {account ? (
-        <p className="connected-account">{account}</p>
+        <p className="connected-account">{walletAddress}</p>
       ) : (
         <button className="connect-button" onClick={connectWallet}>
           Connect MetaMask

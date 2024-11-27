@@ -13,17 +13,7 @@ export default function HamburgerMenu() {
       <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className="line"></div>
       </div>
-      <nav className={`menu ${isOpen ? 'fade-in' : 'fade-out'}`}>
-        <Link to="/create" className="menu-item">
-          Create Pool
-        </Link>
-        <Link to="/pools" className="menu-item">
-          IDOs
-        </Link>
-        <Link to="/block" className="menu-item">
-          Block List
-        </Link>
-      </nav>
+      <nav className={`menu ${isOpen ? 'fade-in' : 'fade-out'}`}></nav>
     </div>
   );
 }

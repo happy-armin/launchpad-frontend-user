@@ -14,3 +14,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Customize the scrollbar for WebKit-based browsers (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(0, 0 , 0, 0);
+}
+
+::-webkit-scrollbar-corner {
+    background-color: rgba(0, 0 , 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0 , 0, 0.5);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0 , 0, 0);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0 , 0, 0);
+    border-radius: 8px;
+}
